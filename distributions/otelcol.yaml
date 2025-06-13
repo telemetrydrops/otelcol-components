@@ -1,0 +1,17 @@
+extensions:
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: localhost:4317
+
+processors:
+exporters:
+  otlp:
+    endpoint: example.com:4317
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [otlp]

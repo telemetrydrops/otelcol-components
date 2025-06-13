@@ -5,6 +5,7 @@ dist:
   output_path: ./dist
 
 extensions:
+  - gomod: github.com/telemetrydrops/otelcol-components/extensions/myextension v0.0.0
 
 receivers:
   - gomod: go.opentelemetry.io/collector/receiver/otlpreceiver v0.128.0
@@ -23,3 +24,6 @@ providers:
   - gomod: go.opentelemetry.io/collector/confmap/provider/httpprovider v1.34.0
   - gomod: go.opentelemetry.io/collector/confmap/provider/httpsprovider v1.34.0
   - gomod: go.opentelemetry.io/collector/confmap/provider/yamlprovider v1.34.0
+
+replaces:
+  - github.com/telemetrydrops/otelcol-components/extensions/myextension => ../../../extensions/myextension

@@ -1,4 +1,6 @@
 extensions:
+  myextension:
+    url: https://otlp.example.com
 
 receivers:
   otlp:
@@ -15,6 +17,7 @@ exporters:
 connectors:
 
 service:
+  extensions: [myextension]
   pipelines:
     traces:
       receivers: [otlp]

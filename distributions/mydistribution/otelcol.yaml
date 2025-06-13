@@ -1,4 +1,5 @@
 extensions:
+
 receivers:
   otlp:
     protocols:
@@ -6,9 +7,12 @@ receivers:
         endpoint: localhost:4317
 
 processors:
+
 exporters:
   otlp:
     endpoint: example.com:4317
+
+connectors:
 
 service:
   pipelines:
